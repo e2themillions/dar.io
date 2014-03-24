@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- hit me with angular! -->
+<html ng-app="darioMod">
+<head>
+	<title>DAR.IO</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+
+</head>
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER AND DAR COUNT -->
+		<div class="jumbotron text-center">			
+			<h1>YO! Dar.io here. </h1>
+			<h3>May I help you?</h3>
+			<span class="label label-info">{{ dar.length }}</span>
+		</div>
+
+		<!-- DAR LIST -->
+		<div id="todo-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+				<!-- LOOP OVER THE TODOS IN $scope.todos -->
+				<div class="checkbox" ng-repeat="d in dar">
+					<label>
+						<input type="button" ng-click="deleteDar(d._id)"> {{ d.name }}
+					</label>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- FORM TO CREATE DAR -->
+		<div id="dar-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+			<input type="text" class="form-control input-lg text-center" placeholder="dar bane" ng-model="formData.text">
+					</div>
+
+					<!-- createDar() WILL CREATE NEW DAR -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createDar()">Add</button>
+				</form>
+			</div>
+		</div>
+
+
+	</div><!-- / container -->
+</body>
+</html>

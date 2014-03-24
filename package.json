@@ -1,0 +1,17 @@
+{
+  "name": "dar.io",
+  "version": "0.0.0",
+  "description": "Democratic Decision And Resolution Tool",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emil Rossing",
+  "license": "BSD",
+  "dependencies": {
+    "logfmt": "^1.0.0",
+    "express": "^3.5.0",
+    "mongoose": "^3.8.8",
+    "mongodb": "^1.3.23"
+  }
+}
