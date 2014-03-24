@@ -1,7 +1,8 @@
 dar.io
 ======
 
-*DAR.io is here to help you.*
+*dar.io is here to help you.* 
+Based on mean.io with goosy goodness (Mongodb + Express + AngularJS + NodeJS + Mongoose).
 
 ## (Democratic) Decision And Resolution tool
 This is a democratic tool, that will help you set-up inter-weighted parameters
