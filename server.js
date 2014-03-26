@@ -84,40 +84,24 @@ app.post('/api/dar', function(req, res) { //notice POST
 
 
 app.get('/test/create', function(req,res) {
-		// create a todo, information comes from AJAX request from Angular
-		var s1 = Score.create({score:[3,2,4]},function(err,s) {
-			if (err) {
-				res.send(err);
-			} else {
 
-				var a1 = Answer.create({
-					respondent_email: "emil@lemur.dk",
-					param_weights:[1,4,2],
-					scores:[s]
-				}, function(err,ans) {
-					if (err) {
-						res.send(err);
-					} else {
-						Dar.create({
-							name : "test dar2...",
-							closed : false,
-							assesment_parameters : ["usability","look","price"],
-							solution_contenders:["prod1","prod2","prod3"],
-							responses:[ans]
+	// create a dar, information comes from AJAX request from Angular		
+	Dar.create({
+		name : "DARIO",
+		closed : false,
+		assesment_parameters : ["usability","look","price"],
+		solution_contenders:["prod1","prod2","prod3"],
+		responses:[{respondent_email:"emil@lemmy.com", param_weights:[1,2,3], scores:[{score:[3,1,2]}]}]
 
-						}, function(err, dar) {
-							if (err)
-								res.send(err);
-
-							// get and return all the todos after you create another
-							res.send("donny");
-						});
-					}
-						
-
-				});
-			}
-		});
+	}, function(err, dar) {
+		if (err) {
+			res.send(err);
+		} else {
+			// get and return all the dar after you create another
+			res.send("donny" + dar._id);			
+		}
+	});
+		
 });
 
 
